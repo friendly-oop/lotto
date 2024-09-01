@@ -17,4 +17,13 @@ class LottoWinningNumberTest {
             .isInstanceOf(IllegalArgumentException.class)
             .hasMessageContaining(LOTTO_WINNING_NUMBER_INPUT_EXCEPTION);
     }
+
+    @Test
+    @DisplayName("45가 넘는 수가 들어오면 예외를 던진다.")
+    void constructor_test2() {
+        String input = "1,2,3,4,5,46";
+        assertThatThrownBy(() -> new LottoWinningNumber(input))
+            .isInstanceOf(IllegalArgumentException.class)
+            .hasMessageContaining(LOTTO_WINNING_NUMBER_INPUT_EXCEPTION);
+    }
 }

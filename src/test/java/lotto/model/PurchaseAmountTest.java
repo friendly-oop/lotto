@@ -3,6 +3,7 @@ package lotto.model;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import static lotto.Constant.PURCHASE_AMOUNT_INPUT_EXCEPTION;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 class PurchaseAmountTest {
@@ -12,7 +13,7 @@ class PurchaseAmountTest {
         int input = 1200;
         assertThatThrownBy(() -> new PurchaseAmount(input))
             .isInstanceOf(IllegalArgumentException.class)
-            .hasMessageContaining("로또 구입 금액은 1000원 단위로 입력 가능합니다.");
+            .hasMessageContaining(PURCHASE_AMOUNT_INPUT_EXCEPTION);
     }
 
 }

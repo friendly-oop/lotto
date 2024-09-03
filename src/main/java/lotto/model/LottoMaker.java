@@ -10,7 +10,9 @@ import static lotto.Constant.MAX_LOTTO_NUMBER;
 import static lotto.Constant.MIN_LOTTO_NUMBER;
 
 public class LottoMaker {
-    public List<Lotto> makeLottoList(PurchaseAmount amount) {
+    private LottoMaker() {}
+
+    public static List<Lotto> makeLottoList(PurchaseAmount amount) {
         int lottoCount = amount.getLottoCount();
 
         List<Lotto> lottos = new ArrayList<>();

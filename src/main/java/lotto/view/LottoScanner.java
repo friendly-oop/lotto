@@ -16,4 +16,9 @@ public class LottoScanner {
         String input = Console.readLine();
         return new LottoWinningNumber(input);
     }
+
+    public void scanLottoWinningBonusNumber(LottoWinningNumber winningNumber) {
+        String input = Console.readLine();
+        winningNumber.initBonusNumber(Integer.parseInt(input));
+    }
 }

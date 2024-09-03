@@ -1,5 +1,7 @@
 package lotto.view;
 
+import lotto.model.Lotto;
+
 public class LottoPrinter {
     private final String PURCHASE_INPUT_MESSAGE = "구입금액을 입력해주세요.";
     private final String PURCHASE_MESSAGE = "%d개를 구매했습니다.";
@@ -13,6 +15,10 @@ public class LottoPrinter {
 
     public void printPurchaseMessage(int count) {
         System.out.println(String.format(PURCHASE_MESSAGE, count));
+    }
+
+    public void printLottoNumbers(Lotto lotto) {
+        System.out.println(lotto.printLottoNumbers());
     }
 
     public void printLottoWinningNumberInputMessage() {

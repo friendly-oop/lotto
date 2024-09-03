@@ -9,6 +9,7 @@ import static lotto.Constant.LOTTO_NUMBER_COUNT;
 import static lotto.Constant.LOTTO_WINNING_NUMBER_INPUT_EXCEPTION;
 import static lotto.Constant.LOTTO_WINNING_BONUS_NUMBER_RANGE_INPUT_EXCEPTION;
 import static lotto.Constant.MAX_LOTTO_NUMBER;
+import static lotto.Constant.MIN_LOTTO_NUMBER;
 import static lotto.Constant.SPLIT_COMMA;
 
 public class LottoWinningNumber {
@@ -41,6 +42,6 @@ public class LottoWinningNumber {
     }
 
     private static boolean checkLottoNumberInRange(Integer number) {
-        return number <= MAX_LOTTO_NUMBER;
+        return number <= MAX_LOTTO_NUMBER && number >= MIN_LOTTO_NUMBER;
     }
 }

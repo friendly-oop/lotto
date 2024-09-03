@@ -40,8 +40,18 @@ class LottoWinningNumberTest {
     }
 
     @Test
-    @DisplayName("로또 번호에 있는 숫자가 들어오면 예외를 던진다.")
+    @DisplayName("1보다 작은 수가 들어오면 예외를 던진다.")
     void initBonusNumber_test2() {
+        LottoWinningNumber lottoWinningNumber = new LottoWinningNumber("1,2,3,4,5,6");
+        int input = 0;
+        assertThatThrownBy(() -> lottoWinningNumber.initBonusNumber(input))
+            .isInstanceOf(IllegalArgumentException.class)
+            .hasMessageContaining(LOTTO_WINNING_BONUS_NUMBER_RANGE_INPUT_EXCEPTION);
+    }
+
+    @Test
+    @DisplayName("로또 번호에 있는 숫자가 들어오면 예외를 던진다.")
+    void initBonusNumber_test3() {
         LottoWinningNumber lottoWinningNumber = new LottoWinningNumber("1,2,3,4,5,6");
         int input = 1;
         assertThatThrownBy(() -> lottoWinningNumber.initBonusNumber(input))

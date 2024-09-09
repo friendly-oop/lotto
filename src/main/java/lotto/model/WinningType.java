@@ -15,4 +15,22 @@ public enum WinningType {
         this.matchNumberCount = matchNumberCount;
         this.isMatchedBonusNumber = isMatchedBonusNumber;
     }
+
+    private boolean getIsMatchedBonusNumber() {
+        return isMatchedBonusNumber;
+    }
+
+    private int getMatchNumberCount() {
+        return matchNumberCount;
+    }
+
+    public static WinningType find(int matchNumberCount, boolean isMatchedBonusNumber) {
+        for (WinningType winningType : values()) {
+            if (winningType.getMatchNumberCount() == matchNumberCount &&
+                winningType.getIsMatchedBonusNumber() == isMatchedBonusNumber) {
+                return winningType;
+            }
+        }
+        return null;
+    }
 }

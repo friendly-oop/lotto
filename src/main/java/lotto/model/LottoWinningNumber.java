@@ -44,4 +44,12 @@ public class LottoWinningNumber {
     private static boolean checkLottoNumberInRange(Integer number) {
         return number <= MAX_LOTTO_NUMBER && number >= MIN_LOTTO_NUMBER;
     }
+
+    public boolean check(int number) {
+        return numbers.contains(number);
+    }
+
+    public boolean checkBonusNumber(int number) {
+        return bonusNumber == number;
+    }
 }
